@@ -8,9 +8,17 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'showmap',
     pathMatch: 'full'
   },
+  {
+    path: 'list',
+    loadChildren: () => import('./list/list.module').then( m => m.ListPageModule)
+  },
+  {
+    path: 'showmap',
+    loadChildren: () => import('./showmap/showmap.module').then( m => m.ShowmapPageModule)
+  }
 ];
 
 @NgModule({

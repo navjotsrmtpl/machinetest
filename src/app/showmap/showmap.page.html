@@ -1,0 +1,30 @@
+
+<ion-content>
+
+    
+        <h2 style="text-align: center;">Location list</h2>
+        <div><button type="button" class="btn btn-primary" [disabled]="!track" (click)="starttrack()">Start tracking</button></div>&nbsp;&nbsp;
+        <div><button type="button" class="btn btn-primary" [disabled]="track" (click)="stoptrack()">Stop tracking</button></div>
+        <p>Note: data will update after every 30s</p>
+
+        <div style="margin-top: 10px;">
+            <button type="button" class="btn btn-info" (click)="list()">for APi list data click here</button>
+        </div>
+    <div>
+      <ion-grid>
+        <ion-row >
+          <ion-col style="border:2px solid black" size="4"><b>S.No.</b></ion-col>
+          <ion-col style="border:2px solid black" size="4"><b>Latitude</b></ion-col>
+          <ion-col style="border:2px solid black" size="4"><b>Longitude</b></ion-col>
+        </ion-row>
+        <ion-row  *ngFor= "let loc of data; let i = index">
+        <ion-col style="border:2px solid black" size="4">{{i+1}}</ion-col>
+        <ion-col style="border:2px solid black" size="4">{{loc.lat}}</ion-col>
+        <ion-col style="border:2px solid black" size="4">{{loc.long}}</ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </div>
+
+    
+</ion-content>
